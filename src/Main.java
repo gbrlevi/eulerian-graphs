@@ -12,7 +12,7 @@ public class Main {
         StdOut.println("   INICIANDO TESTES DOS CIRCUITOS EULERIANOS   ");
         StdOut.println("=================================================");
         StdOut.println();
-
+        System.out.println("UTILIZANDO HIERHOLZER");
         for (String fileName : testFiles) {
             StdOut.println("--- Análise do arquivo: " + fileName + " ---");
                 In in = new In(fileName);
@@ -37,8 +37,12 @@ public class Main {
 
             StdOut.println();
         }
+        System.out.println("==========================================");
+        System.out.println();
+        System.out.println("UTILIZANDO FLEURY");
+        System.out.println();
         for(String fileName : testFiles){
-            System.out.println("--------------- " + fileName + " ---------------");
+            StdOut.println("--- Análise do arquivo: " + fileName + " ---");
             In in = new In(fileName);
             Graph g = new Graph(in);
             FleuryAlgorithm fleury = new FleuryAlgorithm(g);
