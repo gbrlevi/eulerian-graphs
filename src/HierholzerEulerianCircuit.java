@@ -3,14 +3,14 @@ import java.util.HashSet;
 public class HierholzerEulerianCircuit {
 
     private Stack<Integer> circuit;
-    private boolean isEulerian;
+    private final boolean isEulerian;
     private String errorMessage;
 
     public HierholzerEulerianCircuit(Graph G) {
         for (int v = 0; v < G.V(); v++) {
             if (G.degree(v) % 2 != 0) {
                 this.isEulerian = false;
-                this.errorMessage = "Erro: O grafo contém vértices de grau ímpar.";
+                this.errorMessage = "Não euleriano (graus ímpares).";
                 return;
             }
         }
@@ -31,7 +31,7 @@ public class HierholzerEulerianCircuit {
         for (int v = 0; v < G.V(); v++) {
             if (G.degree(v) > 0 && cc.id(v) != componentId) {
                 this.isEulerian = false;
-                this.errorMessage = "Erro: O grafo não é conexo (ignorando vértices isolados).";
+                this.errorMessage = "Desconexo (dois componentes com arestas).";
                 return;
             }
         }

@@ -13,6 +13,7 @@ public class Main {
         StdOut.println("=================================================");
         StdOut.println();
         System.out.println("UTILIZANDO HIERHOLZER");
+        System.out.println();
         for (String fileName : testFiles) {
             StdOut.println("--- Análise do arquivo: " + fileName + " ---");
                 In in = new In(fileName);
@@ -27,7 +28,7 @@ public class Main {
                         output.append(v).append(" ");
                     }
                     if (!output.isEmpty()) {
-                        StdOut.println("Circuito Euleriano: " + output.toString().trim());
+                        StdOut.println("Existe circuito: " + output.toString().trim());
                     } else {
                         StdOut.println("Resultado: Grafo euleriano, mas sem arestas. Circuito vazio.");
                     }
