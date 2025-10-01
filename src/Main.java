@@ -37,5 +37,19 @@ public class Main {
 
             StdOut.println();
         }
+        for(String fileName : testFiles){
+            System.out.println("--------------- " + fileName + " ---------------");
+            In in = new In(fileName);
+            Graph g = new Graph(in);
+            FleuryAlgorithm fleury = new FleuryAlgorithm(g);
+
+            if (fleury.cycle() != null) {
+                System.out.println("Resultado: Ciclo Euleriano encontrado.");
+                System.out.println(fleury.cycle());
+            } else {
+                System.out.println("Resultado: " + fleury.getValidationMessage());
+            }
+            System.out.println();
+        }
     }
 }
