@@ -28,7 +28,6 @@ public class FleuryAlgorithm {
             this.validationMessage = "Não euleriano (graus ímpares).";
             return;
         }
-        // --- FIM DA VALIDAÇÃO ---
 
         this.isEulerian = true;
         if (G.E() == 0) return;
@@ -63,8 +62,6 @@ public class FleuryAlgorithm {
             if (neighbors.size() == 1) {
                 nextV = neighbors.get(0);
             } else {
-                // ### A CORREÇÃO ESTÁ AQUI ###
-                // Iteramos sobre uma CÓPIA da lista de vizinhos para evitar o erro.
                 for (int neighbor : new ArrayList<>(neighbors)) {
                     if (!isBridge(currentV, neighbor, adj)) {
                         nextV = neighbor;
@@ -79,7 +76,6 @@ public class FleuryAlgorithm {
         }
     }
 
-    // O restante da classe permanece igual...
     private Map<Integer, List<Integer>> createMutableCopy(Graph G) {
         Map<Integer, List<Integer>> adj = new HashMap<>();
         for (int v = 0; v < G.V(); v++) {
